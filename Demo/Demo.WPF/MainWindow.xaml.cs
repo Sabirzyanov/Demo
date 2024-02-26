@@ -65,9 +65,12 @@ namespace Demo.WPF
             };
 
             SortComboBox.SelectedItem = DefaultOrder;
-            var filters = GlobalContext.MaterialTypeRepository.GetAll().Select(x => x.Name).ToArray();
-            FilterComboBox.ItemsSource = filters;
-
+            // var filters = GlobalContext.MaterialTypeRepository.GetAll().Select(x => x.Name).ToArray();
+            FilterComboBox.ItemsSource = new[]
+            {
+                UniversalFilter
+            };
+            
             FilterComboBox.SelectedItem = UniversalFilter;
             
             LvProducts.ItemsSource = _paginatedProducts;
